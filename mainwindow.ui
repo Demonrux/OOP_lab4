@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>855</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Main Window</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #2D3848;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget#centralwidget {
+   background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #1A2A3A, stop:1 #2D3848);
+}
+</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QGraphicsView" name="graphicsView">
+      <property name="minimumSize">
+       <size>
+        <width>600</width>
+        <height>400</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGraphicsView {
+    background-color: #1E2B38;
+    border: 1px solid #3A4A5D;
+    border-radius: 4px;
+}
+
+QGraphicsView QScrollBar:vertical {
+    background: #2C3E50;
+    width: 10px;
+    margin: 0px;
+}
+
+QGraphicsView QScrollBar::handle:vertical {
+    background: #4A5D6E;
+    min-height: 20px;
+    border-radius: 4px;
+}</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="pathLabel">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    color: #E0E0E0;
+    font-size: 13px;
+    padding: 5px;
+}
+
+QLabel#pathLabel {
+    background-color: rgba(44, 62, 80, 150);
+    border: 1px solid #3A4A5D;
+    border-radius: 3px;
+}</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="filePushButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+     background-color: #2980B9;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Выбрать файл</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="uploadPushButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+     background-color: #2980B9;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Загрузить данные</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    border: 1px solid #3A4A5D;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding-top: 15px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+    color: #E0E0E0;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="title">
+           <string>Нормировка</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QDoubleSpinBox" name="normASpinBox">
+             <property name="font">
+              <font>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QDoubleSpinBox, QSpinBox {
+    background-color: #2C3E50;
+    border: 1px solid #3A4A5D;
+    border-radius: 3px;
+    color: #E0E0E0;
+    padding: 5px;
+}
+
+QDoubleSpinBox:hover, QSpinBox:hover {
+    border-color: #4A5D6E;
+}
+
+QDoubleSpinBox::up-button, QSpinBox::up-button {
+    width: 16px;
+    subcontrol-origin: border;
+    left: -2px;
+}
+
+QDoubleSpinBox::down-button, QSpinBox::down-button {
+    width: 16px;
+    subcontrol-origin: border;
+    left: -2px;
+}</string>
+             </property>
+             <property name="minimum">
+              <double>-1000000.000000000000000</double>
+             </property>
+             <property name="maximum">
+              <double>1000000.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>0.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="font">
+              <font>
+               <pointsize>-1</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #E0E0E0;
+    font-size: 13px;
+    padding: 5px;
+}</string>
+             </property>
+             <property name="text">
+              <string>до</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="normBSpinBox">
+             <property name="font">
+              <font>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QDoubleSpinBox, QSpinBox {
+    background-color: #2C3E50;
+    border: 1px solid #3A4A5D;
+    border-radius: 3px;
+    color: #E0E0E0;
+    padding: 5px;
+}
+
+QDoubleSpinBox:hover, QSpinBox:hover {
+    border-color: #4A5D6E;
+}
+
+QDoubleSpinBox::up-button, QSpinBox::up-button {
+    width: 16px;
+    subcontrol-origin: border;
+    left: -2px;
+}
+
+QDoubleSpinBox::down-button, QSpinBox::down-button {
+    width: 16px;
+    subcontrol-origin: border;
+    left: -2px;
+}</string>
+             </property>
+             <property name="minimum">
+              <double>-1000000.000000000000000</double>
+             </property>
+             <property name="maximum">
+              <double>1000000.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    border: 1px solid #3A4A5D;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding-top: 15px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+    color: #E0E0E0;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="title">
+           <string>Шаг точек</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QDoubleSpinBox" name="stepSpinBox">
+             <property name="font">
+              <font>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QDoubleSpinBox, QSpinBox {
+    background-color: #2C3E50;
+    border: 1px solid #3A4A5D;
+    border-radius: 3px;
+    color: #E0E0E0;
+    padding: 5px;
+}
+
+QDoubleSpinBox:hover, QSpinBox:hover {
+    border-color: #4A5D6E;
+}
+
+QDoubleSpinBox::up-button, QSpinBox::up-button {
+    width: 16px;
+    subcontrol-origin: border;
+    left: -2px;
+}
+
+QDoubleSpinBox::down-button, QSpinBox::down-button {
+    width: 16px;
+    subcontrol-origin: border;
+    left: -2px;
+}</string>
+             </property>
+             <property name="minimum">
+              <double>1.000000000000000</double>
+             </property>
+             <property name="maximum">
+              <double>100.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="2" column="1">
+         <widget class="QPushButton" name="rotateZMinusButton">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #3A4A5D;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Поворот Z-</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="rotateYPlusButton">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #3A4A5D;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Поворот Y+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QPushButton" name="translateZMinusButton">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #3A4A5D;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Сдвиг Z-</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="2" colspan="2">
+         <widget class="QPushButton" name="zoomInButton">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+     background-color: #2980B9;;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Увеличить</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="rotateZPlusButton">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #3A4A5D;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Поворот Z+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QPushButton" name="translateZPlusButton">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #3A4A5D;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Сдвиг Z+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0" colspan="2">
+         <widget class="QPushButton" name="zoomOutButton">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+     background-color: #2980B9;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Уменьшить</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QPushButton" name="translateXMinusButton">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #3A4A5D;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Сдвиг X-</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QPushButton" name="translateYMinusButton">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #3A4A5D;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Сдвиг Y-</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="rotateYMinusButton">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #3A4A5D;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Поворот Y-</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="rotateXMinusButton">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #3A4A5D;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Поворот X-</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="translateYPlusButton">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #3A4A5D;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Сдвиг Y+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="rotateXPlusButton">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #3A4A5D;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Поворот X+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="translateXPlusButton">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #3A4A5D;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Сдвиг X+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0" colspan="4">
+         <widget class="QPushButton" name="exitButton">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #E74C3C;
+    border-color: #C0392B;
+    border: 1px solid #4A5D6E;
+    border-radius: 4px;
+    color: #E0E0E0;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #4A5D6E;
+    border-color: #5B6E80;
+}
+
+QPushButton:pressed {
+    background-color: #2C3E50;
+    padding: 7px 11px 5px 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Выход</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
