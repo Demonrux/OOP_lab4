@@ -18,19 +18,19 @@
 ## Полная структура проекта
 OOP_lab4/
 ├── core/ # Основные классы ядра
-│ ├── basefilereader.h
-│ ├── constants.h
-│ ├── edge.h/cpp
-│ ├── facade.h/cpp
-│ ├── facadeoperationresult.h/cpp
-│ ├── figure.h/cpp
-│ ├── normalizationparameters.h/cpp
-│ ├── point3d.h/cpp
-│ ├── scene.h/cpp
-│ ├── scenedrawerbase.h
-│ ├── sceneobject.h
-│ ├── transformmatrix.h/cpp
-│ └── transformmatrixbuilder.h/cpp
+│ ── basefilereader.h
+│ ── constants.h
+│ ── edge.h/cpp
+│ ── facade.h/cpp
+│ ── facadeoperationresult.h/cpp
+│ ── figure.h/cpp
+│ ── normalizationparameters.h/cpp
+│ ── point3d.h/cpp
+│ ── scene.h/cpp
+│ ── scenedrawerbase.h
+│ ── sceneobject.h
+│ ── transformmatrix.h/cpp
+│ ── transformmatrixbuilder.h/cpp
 ├── io/ # Классы ввода/вывода
 │ ├── filereader.h/cpp
 │ └── qtscenedrawer.h/cpp
