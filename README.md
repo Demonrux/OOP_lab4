@@ -53,7 +53,7 @@ OOP_lab4/
 - **`Point3D`** - точка в трёхмерном пространстве
   
 ### Интерфейс
-<img width="1000" height="900" alt="image" src="https://github.com/user-attachments/assets/6118e7d7-2a39-424c-92d6-7d34e5536cfa" />
+<img width="800" height="700" alt="image" src="https://github.com/user-attachments/assets/6118e7d7-2a39-424c-92d6-7d34e5536cfa" />
 
 ### Математические преобразования:
 - **`TransformMatrix`** - матрица преобразований 4x4
