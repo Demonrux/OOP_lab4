@@ -15,8 +15,12 @@
   - Масштабирование (увеличение/уменьшение)
 - **Интерфейс**: Графический интерфейс на Qt
   
-```
+## Диаграмма классов
+<img width="800" height="700" alt="mainwindow_8h__incl" src="https://github.com/user-attachments/assets/39707142-183f-4f55-a6af-d9e5173f22c7" />
+
+
 ## Полная структура проекта
+```
 OOP_lab4/
 - core/ # Основные классы ядра
  ─ basefilereader.h
